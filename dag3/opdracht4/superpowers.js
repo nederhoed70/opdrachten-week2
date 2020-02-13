@@ -131,12 +131,8 @@ console.log(totalWeight(superHeroes, 'DC Comics'));
 //8. Bonus: zoek de zwaarste superheld!
 const heaviestHero = (array) => {
     const onlyNumbers = (numbers) => numbers.filter(element => element.weight !== 'unknown').map(element => parseInt(element.weight));
-
-    const heavyWeight = onlyNumbers(array).reduce(reducer = (last,current, index, reducer) => last > current ? last : current);
-    // STUCK: const heroName = (array) => array.map(element => element.name, element.weight === heavyWeight(element));
-    //return heroName(array);
-    return heavyWeight;
-
-}
-    console.log(heaviestHero(superHeroes));
-//console.log(superHeroes.length);
+    const heavyWeight = onlyNumbers(array).reduce(reducer = (last,current, index, reducer) => last > current ? last : index-2);
+    return array[heavyWeight].name;
+    
+};
+console.log(heaviestHero(superHeroes));
